@@ -1,0 +1,108 @@
+{
+  "encoder": {
+    "ConvLayer1": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 1,
+        "out_channels": 23,
+        "kernel_size": 7,
+        "stride": 2
+      }
+    },
+    "PoolingLayer1": {
+      "params": {
+        "out_channels": 23,
+        "pool_type": "max",
+        "pool_kernel": 2,
+        "pool_stride": 2
+      }
+  },
+    "ResBlock1": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 23,
+        "out_channels": 23,
+        "kernel_size": 5
+      }
+    },
+    "ResBlock_reduce1": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 23,
+        "out_channels": 46,
+        "kernel_size": 5,
+        "downsample_first": true
+      }
+    },
+    "ResBlock2": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 46,
+        "out_channels": 46,
+        "kernel_size": 5
+      }
+    },
+    "ResBlock_reduce2": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 46,
+        "out_channels": 92,
+        "kernel_size": 5,
+        "downsample_first": true
+      }
+    },
+    "ResBlock3": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 92,
+        "out_channels": 92,
+        "kernel_size": 5
+      }
+    },
+    "ResBlock3_reduce": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 92,
+        "out_channels": 92,
+        "kernel_size": 5,
+        "downsample_first": true
+      }
+    },
+    "ResBlock4": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 92,
+        "out_channels": 92,
+        "kernel_size": 5
+      }
+    },
+    "ResBlock4_reduce": {
+      "num_repetitions": 1,
+      "params": {
+        "in_channels": 92,
+        "out_channels": 92,
+        "kernel_size": 3,
+        "downsample_first": true
+      }
+    },
+    "ResBlock5": {
+      "num_repetitions": 2,
+      "params": {
+        "in_channels": 92,
+        "out_channels": 92,
+        "kernel_size": 3
+      }
+    },
+    "PoolingLayer2": {
+      "params": {
+        "out_channels": 92,
+        "pool_type": "global_avg",
+        "map_size": 4
+      }
+    }
+  },
+  "input_size": 256,
+  "encoder_out_size": 92,
+  "latent_dim": 16,
+  "decoder": {}
+}
