@@ -161,6 +161,6 @@ def check_files_for_TOI(folder=r'../../Data/TESS', toi_source="tois.csv"):
 
 if __name__ == "__main__":
     recent_TOI_table()
-    query_results, failed = query_TIC_IDs(source_file="tois_latest.csv", tess_only=True, download=True, start_from=347,
+    query_results, failed = query_TIC_IDs(source_file="tois_latest.csv", tess_only=True, download=True,
                                           file_ending="lc.fits")
     check_files_for_TOI(folder=r'../../Data/TESS_large', toi_source="tois_latest.csv")
